@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "20d9c1f2-7a89-4991-baee-1af1ddff8e53",
+		"name": "Employee Manager V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://peaceful-inlet-88854.herokuapp.com/api/employees",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4f05c088-1430-4aa5-babf-3b83ad025695",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Son Goku\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"555\",\n    \"name\": \"Son Goku\",\n    \"phone\": \"1251261278\",\n    \"email\": \"number4@dragonball.com\",\n    \"title\": \"Universe's Strongest\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://peaceful-inlet-88854.herokuapp.com/api/employees",
+					"protocol": "https",
+					"host": [
+						"peaceful-inlet-88854",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://peaceful-inlet-88854.herokuapp.com/api/employees?employee_id=777",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed6f8337-626a-4d95-92d6-0fb3444ad8ef",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Son Goku\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://peaceful-inlet-88854.herokuapp.com/api/employees?employee_id=555",
+					"protocol": "https",
+					"host": [
+						"peaceful-inlet-88854",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "employee_id",
+							"value": "555"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://peaceful-inlet-88854.herokuapp.com/api/employees/633?name=Zack Morris&phone=8088088800&email=zmorris@baysidehigh.com&title=Bayside's Finest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a2074a5-3244-4ac9-ad14-dafac17be331",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"633\");",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"5425425422\");",
+							"});",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://peaceful-inlet-88854.herokuapp.com/api/employees/633?name=Zack Morris&phone=5425425422&email=zmorris@baysidehigh.com&title=Bayside's Finest",
+					"protocol": "https",
+					"host": [
+						"peaceful-inlet-88854",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"employees",
+						"633"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Zack Morris"
+						},
+						{
+							"key": "phone",
+							"value": "5425425422"
+						},
+						{
+							"key": "email",
+							"value": "zmorris@baysidehigh.com"
+						},
+						{
+							"key": "title",
+							"value": "Bayside's Finest"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://peaceful-inlet-88854.herokuapp.com/api/employees/777",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb96050d-fe0a-4079-9af5-d761b01edc17",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://peaceful-inlet-88854.herokuapp.com/api/employees/633",
+					"protocol": "https",
+					"host": [
+						"peaceful-inlet-88854",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"employees",
+						"633"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "633",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
